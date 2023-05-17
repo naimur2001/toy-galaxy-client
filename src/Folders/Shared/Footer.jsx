@@ -10,12 +10,14 @@ const Footer = () => {
     <p className="font-bold">
      Toy Galaxy. <br/>Providing reliable Eco Toy since 2010
     </p> 
+    <p className='font-medium'>Contact: 0101010 & lorem@gmail.com</p>
     <p>Copyright © 2023 - All right reserved</p>
+    
   </div> 
   <div>
-    <div className="grid grid-flow-col gap-4">
-      <a><img src="/public/facebook_circle_color-512.webp" className='w-10 h-10' alt="" /></a> 
+    <div className="grid grid-cols-3 gap-4">
       <a><img src="/public/Google__G__Logo.svg.webp" className='w-10 h-10' alt="" /></a> 
+      <a><img src="/public/facebook_circle_color-512.webp" className='w-10 h-10' alt="" /></a> 
       <a><img src="/public/Instagram_icon.png.webp" className='w-10 h-10' alt="" /></a>
     </div>
   </div>
