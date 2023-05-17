@@ -32,6 +32,7 @@ const conditionalElement= <>
           </label>
           <ul tabIndex={0} className="menu menu-compact font-semibold dropdown-content mt-3 p-2 shadow bg-base-100  rounded-box w-52">
             <li ><Link to='/'>Home</Link></li>
+            <li ><Link to='/alltoys'>All Toys</Link></li>
             <li >
               <Link to='/blogs' className="justify-between">
                 Blogs
@@ -60,6 +61,7 @@ const conditionalElement= <>
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 text-lg">
           <li>  <Link to='/'><img src="/public/tg.png" className='w-24 h-16' alt="" /></Link></li>
           <li className='text-black font-mono'><Link to='/'>Home</Link></li>
+          <li className='text-black font-mono'><Link to='/alltoys'>All Toys</Link></li>
           <li className='text-black font-mono'>
             <Link to='/blogs' className="justify-between">
               Blogs
