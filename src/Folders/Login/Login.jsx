@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import Navbar from '../Shared/Navbar';
+import Footer from '../Shared/Footer';
 
 const Login = () => {
-  const {signIn,googleSignIn
-    }=useContext(AuthContext);
+  const {signIn,googleSignIn }=useContext(AuthContext);
 
     //privateroute
     
@@ -33,7 +35,11 @@ const handleSignIn=(event)=>{
    }
    else if (error.code === 'auth/user-not-found') {
     SetError('Incorrect email')
-   } else {
+   } 
+   else if (error.code === 'auth/invalid-email') {
+    SetError('Invalid email')
+   } 
+   else {
      SetError(error.message);
    }
   })
@@ -52,15 +58,17 @@ const handleGoogle=(event)=>{
   })
 }
   return (
-    <div className='mt-10'>
+<>
+<Navbar></Navbar>
+<div className='mt-10'>
     <form onSubmit={handleSignIn}>
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-purple-200 rounded-lg">
     <div className="hero-content flex-col ">
       <div className="text-center lg:text-left">
         <h1 className="text-5xl font-bold">Login!</h1>
         
       </div>
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent">
         <div className="card-body">
          
           <div className="form-control">
@@ -79,14 +87,12 @@ const handleGoogle=(event)=>{
           </div>
           <p className='text-center text-red-500'>{error}</p>
           <div className="form-control mt-6">
-            <button className="btn btn-warning my-2">Login</button>
+            <button className="btn bg-purple-400  border-0 my-2">Login</button>
             <Link className='text-blue-500 text-center'>Forgot Password !</Link>
             <button onClick={handleGoogle} className="btn bg-red-200 border-0 text-black my-2">
              <img src="./Google__G__Logo.svg.webp" className='w-7 h-7 mx-2' alt="" />
               Login with Google</button>
-            <button onClick={handleGithub} className="btn bg-cyan-400 border-0 text-black my-2">
-              <img src="./25231.png" className='w-7 h-7 mx-2' alt="" />
-              Login with Github</button>
+            
             <label className="label">
               Don't have an account --
               <Link to='/signup' className="label-text-alt link link-hover text-base text-red-400 mx-3">register</Link>
@@ -98,6 +104,8 @@ const handleGoogle=(event)=>{
     </div>
     </form>
       </div>
+<Footer></Footer>
+</>
   );
 };
 

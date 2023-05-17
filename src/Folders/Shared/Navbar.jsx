@@ -1,25 +1,27 @@
-// import React, { useContext } from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
-// import { AuthContext } from '../AuthProvider/AuthProvider';
+import { AuthContext } from '../AuthProvider/AuthProvider';
+import { useContext } from 'react';
 
 const Navbar = () => {
-//   const {user,logOut}=useContext(AuthContext);
-  const user=''
-//   const location=useLocation()
-// //   const handleSignOut=()=>{
-// //     logOut()
-// //   .then(result=>{
-// // // console.log('');
-// //   })
-// //   .catch(error=>{
-// //     console.log(error);
-// //   })
-//   //}
+const {user,logOut}=useContext(AuthContext);
+
+
+  
+  const handleSignOut=()=>{
+    logOut()
+  .then(result=>{
+// console.log('');
+  })
+  .catch(error=>{
+    console.log(error);
+  })
+  }
 
 const conditionalElement= <>
-  <li className='text-black font-mono'><Link to='/addatoy' onClick={''}>Add A Toy</Link></li>
-  <li className='text-black font-mono'><Link to='/mytoys' onClick={''}>My Toys</Link></li>
-  <li className='text-black font-mono' ><Link to='/' onClick={''}>Logout</Link></li>
+  <li className='text-black font-mono'><Link to='/addatoy'>Add A Toy</Link></li>
+  <li className='text-black font-mono'><Link to='/mytoys' >My Toys</Link></li>
+  <li className='text-black font-mono' ><Link to='/' onClick={handleSignOut}>Logout</Link></li>
 </>
 
   return (
@@ -80,10 +82,10 @@ const conditionalElement= <>
       </div>
       
   {
-    user && <div className="navbar-end lg:ml-4 flex lg:w-24 justify-end">
+    user && <div className="navbar-end  lg:w-26 ">
         
       
-    <img src='' className='rounded-full w-12 h-12 border-2 ' title='' alt="IMG" />
+    <img src={user.photoURL} className='rounded-full w-12 h-12 border-2 ' title={user.displayName} alt="IMG" />
     
     </div>
   }
