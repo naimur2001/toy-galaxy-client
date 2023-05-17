@@ -26,7 +26,7 @@ const Navbar = () => {
           <ul tabIndex={0} className="menu menu-compact font-semibold dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li ><Link to='/'>Home</Link></li>
             <li >
-              <Link to='/blog' className="justify-between">
+              <Link to='/blogs' className="justify-between">
                 Blogs
               </Link>
             </li>
@@ -52,7 +52,7 @@ const Navbar = () => {
           <li>  <Link to='/'><img src="/public/tg.png" className='w-24 h-16' alt="" /></Link></li>
           <li ><Link to='/'>Home</Link></li>
           <li >
-            <Link to='/blog' className="justify-between">
+            <Link to='/blogs' className="justify-between">
               Blogs
             </Link>
           </li>
