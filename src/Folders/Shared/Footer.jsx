@@ -5,7 +5,12 @@ const Footer = () => {
   return (
     <div className='mt-10'>
       <div className='bg-green-200 rounded-lg'>
-<div className='grid lg:grid-cols-3 gap-4 lg: mx-6  my-4'>
+<div className='grid lg:grid-cols-4 gap-4 lg:mx-6  my-4'>
+<div className='my-3 mx-auto'>
+
+<img src="/public/tg.png" className='w-36 h-36' alt="" />
+
+    </div>
 <div className='my-3 mx-auto'>
       <h3 className="text-xl font-bold text-rose-400 mb-3  lg:text-left text-center">Contact Us</h3>
       <p className="text-gray-500 font-medium text-lg lg:text-left text-center">123 Hazaribagh Street</p>
@@ -35,7 +40,7 @@ const Footer = () => {
     </div>
 </div>
 
-<p className="text-black font-semibold text-center ">&copy; 2023 Food Bliss. All Rights Reserved.</p>
+<p className="text-black font-semibold text-center ">&copy; 2023 Toy Galaxy. All Rights Reserved.</p>
 
       </div>
     </div>

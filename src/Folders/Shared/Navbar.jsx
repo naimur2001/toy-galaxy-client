@@ -24,8 +24,8 @@ const Navbar = () => {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </label>
           <ul tabIndex={0} className="menu menu-compact font-semibold dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-            <li className={location.pathname === '/' ? 'text-green-400' : ''}><Link to='/'>Home</Link></li>
-            <li className={location.pathname === '/blog' ? 'text-green-400' : ''}>
+            <li ><Link to='/'>Home</Link></li>
+            <li >
               <Link to='/blog' className="justify-between">
                 Blogs
               </Link>
@@ -34,25 +34,24 @@ const Navbar = () => {
               <li><Link to='/' onClick={''}>Logout</Link></li>
             ) : (
               <>
-                <li className={location.pathname === '/login' ? 'text-green-400' : ''}><Link to='/login'>Login</Link></li>
-                <li className={location.pathname === '/register' ? 'text-green-400' : ''}><Link to='/register'>Register</Link></li>
+                <li ><Link to='/login'>Login</Link></li>
+                <li><Link to='/register'>Register</Link></li>
               </>
             )}
-            <li className={location.pathname === '/about' ? 'text-green-400' : ''}><Link to='/about'>About Us</Link></li>
+            <li><Link to='/about'>About Us</Link></li>
           </ul>
         </div>
+     <h1 className='font-mono text-center sm:text-center md:text-center lg:text-start text-xl'>Toy Galaxy</h1>
      
-     
-     <Link to='/'>
-       <img src="/public/tg.png" className=' w-20 h-14' alt="" />
-       </Link>
-      
+   
 
       </div>
-  <div className="navbar-center hidden lg:flex lg:mr-80">
+  <div className="navbar-center hidden lg:flex lg:mr-72">
+
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 text-lg">
-          <li className={location.pathname === '/' ? 'text-green-400' : ''}><Link to='/'>Home</Link></li>
-          <li className={location.pathname === '/blog' ? 'text-green-400' : ''}>
+          <li>  <Link to='/'><img src="/public/tg.png" className='w-24 h-16' alt="" /></Link></li>
+          <li ><Link to='/'>Home</Link></li>
+          <li >
             <Link to='/blog' className="justify-between">
               Blogs
             </Link>
@@ -61,16 +60,19 @@ const Navbar = () => {
             <li><Link to='/' onClick={''}>Logout</Link></li>
           ) : (
             <>
-              <li className={location.pathname === '/login' ? 'text-green-400' : ''}><Link to='/login'>Login</Link></li>
-              <li className={location.pathname === '/register' ? 'text-green-400' : ''}><Link to='/register'>Register</Link></li>
+              <li><Link to='/login'>Login</Link></li>
+              <li><Link to='/register'>Register</Link></li>
             </>
           )}
-          <li className={location.pathname === '/about' ? 'text-green-400' : ''}><Link to='/about'>About Us</Link></li>
+          <li><Link to='/about'>About Us</Link></li>
         </ul>
       </div>
+      
   {
-    user && <div className="navbar-end lg:mx-4 lg:w-24">
-    <img src=''className='rounded-full w-12 h-12 border-2 ' title='' alt="IMG" />
+    user && <div className="navbar-end lg:ml-4 flex lg:w-24 justify-end">
+        
+      
+    <img src='' className='rounded-full w-12 h-12 border-2 ' title='' alt="IMG" />
     
     </div>
   }
