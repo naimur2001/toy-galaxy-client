@@ -43,7 +43,7 @@ const conditionalElement= <>
              : 
               <>
                 <li className='text-black font-mono'><Link to='/login'>Login</Link></li>
-                <li className='text-black font-mono' ><Link to='/register'>Register</Link></li>
+                <li className='text-black font-mono' ><Link to='/signup'>Register</Link></li>
               </>
             }
             <li><Link to='/about'>About Us</Link></li>
@@ -70,7 +70,7 @@ const conditionalElement= <>
           </>: (
             <>
               <li className='text-black font-mono'><Link to='/login'>Login</Link></li>
-              <li className='text-black font-mono'><Link to='/register'>Register</Link></li>
+              <li className='text-black font-mono'><Link to='/signup'>Register</Link></li>
             </>
           )}
        
