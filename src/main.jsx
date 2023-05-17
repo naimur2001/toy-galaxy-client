@@ -6,11 +6,12 @@ import { RouterProvider } from 'react-router-dom'
 import router from './Folders/Routes/Routes.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <div>
-      <RouterProvider router={router} ></RouterProvider>
-    </div>
-  </React.StrictMode>,
+<div className='max-w-5xl mx-auto'>
+<React.StrictMode>
+  <RouterProvider router={router}></RouterProvider>
+          
+  </React.StrictMode>
+</div>
 )
 
 // https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-client-side-naimur2001

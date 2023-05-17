@@ -1,23 +1,23 @@
-import React, { useContext } from 'react';
+// import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
+// import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Navbar = () => {
-  const {user,logOut}=useContext(AuthContext);
-  
-  const location=useLocation()
-  const handleSignOut=()=>{
-    logOut()
-  .then(result=>{
-// console.log('');
-  })
-  .catch(error=>{
-    console.log(error);
-  })
-  }
+//   const {user,logOut}=useContext(AuthContext);
+  const user='emon'
+//   const location=useLocation()
+// //   const handleSignOut=()=>{
+// //     logOut()
+// //   .then(result=>{
+// // // console.log('');
+// //   })
+// //   .catch(error=>{
+// //     console.log(error);
+// //   })
+//   //}
   return (
     <div>
-      <div className="navbar bg-cyan-900">
+      <div className="navbar bg-green-200  rounded-lg">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Navbar = () => {
               </Link>
             </li>
             {user ? (
-              <li><Link to='/' onClick={handleSignOut}>Logout</Link></li>
+              <li><Link to='/' onClick={''}>Logout</Link></li>
             ) : (
               <>
                 <li className={location.pathname === '/login' ? 'text-green-400' : ''}><Link to='/login'>Login</Link></li>
@@ -41,7 +41,13 @@ const Navbar = () => {
             <li className={location.pathname === '/about' ? 'text-green-400' : ''}><Link to='/about'>About Us</Link></li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-warning text-xl border-2 border-white">Food Bliss</a>
+     
+     
+     <Link to='/'>
+       <img src="/public/tg.png" className=' w-20 h-14' alt="" />
+       </Link>
+      
+
       </div>
   <div className="navbar-center hidden lg:flex lg:mr-80">
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 text-lg">
@@ -52,7 +58,7 @@ const Navbar = () => {
             </Link>
           </li>
           {user ? (
-            <li><Link to='/' onClick={handleSignOut}>Logout</Link></li>
+            <li><Link to='/' onClick={''}>Logout</Link></li>
           ) : (
             <>
               <li className={location.pathname === '/login' ? 'text-green-400' : ''}><Link to='/login'>Login</Link></li>
@@ -64,7 +70,7 @@ const Navbar = () => {
       </div>
   {
     user && <div className="navbar-end lg:mx-4 lg:w-24">
-    <img src={user.photoURL} className='rounded-full w-12 h-12 border-2 ' title={user.displayName} alt="IMG" />
+    <img src=''className='rounded-full w-12 h-12 border-2 ' title='' alt="IMG" />
     
     </div>
   }
