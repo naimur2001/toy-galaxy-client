@@ -1,5 +1,4 @@
-import { faFaceAngry, faFaceMehBlank } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import React from 'react';
 
 const Footer = () => {
@@ -23,7 +22,7 @@ const Footer = () => {
       <h3 className="text-xl font-bold text-rose-400 mb-3  lg:text-left text-center">Follow Us</h3>
       <div className="flex">
         <a href="#" className="text-gray-400 hover:text-white lg:text-left text-center transition duration-500 ease-in-out">
-    <img src="./facebook_circle_color-512.webp" className='w-10 h-10' alt="" />
+    <img src="" className='w-10 h-10' alt="fb" />
         </a>
         <a href="#" className="text-gray-400 hover:text-white ml-3 lg:text-left text-center transition duration-500 ease-in-out">
         <img src="./2018_social_media_popular_app_logo_youtube-512.webp" className='w-10 h-10' alt="" />
