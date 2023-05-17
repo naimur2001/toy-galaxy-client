@@ -41,7 +41,8 @@ const Navbar = () => {
             <li><Link to='/about'>About Us</Link></li>
           </ul>
         </div>
-     <h1 className='font-mono text-center sm:text-center md:text-center lg:text-start text-xl'>Toy Galaxy</h1>
+
+     <h1 className='font-mono text-center sm:text-center md:text-center lg:text-start text-xl font-semibold'>Toy Galaxy</h1>
      
    
 
