@@ -16,12 +16,13 @@ const handleAddData=(event)=>{
   const rating=form.rating.value;
   const cate=category;
   const detail=form.detail.value;
-  const seller_name=user?.displayName
-  const seller_email=user?.email
+  const seller_name=user.displayName
+  const seller_email=user.email
   const carInfo={
     name,
     url,quantity,price,rating,cate,detail,seller_email,seller_name
   }
+  console.log(carInfo);
   fetch(`http://localhost:5000/toycars`,{
     method: "POST",
     headers:{
