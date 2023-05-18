@@ -19,7 +19,7 @@ const images=[
   return (
     <div className="my-6">
       <h1 className="text-2xl font-mono font-extrabold text-center text-purple-700 mb-8">
-  Explore the Magical Car Toy Galaxy
+  Explore the Magical Car Gallery
 </h1>
    <ResponsiveMasonry
                 columnsCountBreakPoints={{350: 1, 750: 3, 900: 3}}
@@ -27,7 +27,7 @@ const images=[
                 <Masonry >
                 {images.map((image, index) => (
         <div key={index}>
-          <img src={image} alt="" className="p-2 p-2 hover:scale-105 transform transition-transform duration-300" />
+          <img src={image} alt="" className="p-2  hover:scale-105 transform transition-transform duration-300" />
         </div>
       ))}
                 </Masonry>
