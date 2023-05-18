@@ -33,7 +33,7 @@ const SliderSection = () => {
   <div className="card-body">
     <p className='text-center font-semibold'>Unleash your inner child.</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-outline border-lime-300 border-4">Enjoy!</button>
+      <button className="btn btn-outline border-lime-300 border-4">More!</button>
     </div>
   </div>
 </div>
@@ -47,7 +47,7 @@ const SliderSection = () => {
   <div className="card-body">
     <p className='text-center font-semibold'>Where playtime dreams come true!</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-outline border-lime-300 border-4">Enjoy!</button>
+      <button className="btn btn-outline border-lime-300 border-4">More!</button>
     </div>
   </div>
 </div>
@@ -59,7 +59,7 @@ const SliderSection = () => {
   <div className="card-body">
     <p className='text-center font-semibold'>Discover endless fun and adventure.</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-outline border-lime-300 border-4">Enjoy!</button>
+      <button className="btn btn-outline border-lime-300 border-4">More!</button>
     </div>
   </div>
 </div>
@@ -72,7 +72,7 @@ const SliderSection = () => {
   <div className="card-body">
     <p className='text-center font-semibold'>Toys that spark joy!</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-outline border-lime-300 border-4">Enjoy!</button>
+      <button className="btn btn-outline border-lime-300 border-4">More!</button>
     </div>
   </div>
 </div>
@@ -83,7 +83,7 @@ const SliderSection = () => {
   <div className="card-body">
     <p className='text-center font-semibold'>Discover endless fun and adventure.</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-outline border-lime-300 border-4">Enjoy!</button>
+      <button className="btn btn-outline border-lime-300 border-4">More!</button>
     </div>
   </div>
 </div>
