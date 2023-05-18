@@ -58,7 +58,7 @@ const conditionalElement= <>
    
 
       </div>
-  <div className="navbar-center hidden lg:flex lg:mr-24">
+  <div className="navbar-center hidden lg:flex lg:mr-22">
 
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 text-lg">
           <li>  <Link to='/'><img src="/public/tg.png" className='w-24 h-16' alt="" /></Link></li>
