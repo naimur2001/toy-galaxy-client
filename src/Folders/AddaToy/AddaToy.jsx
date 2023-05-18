@@ -85,7 +85,7 @@ const handleAddData=(event)=>{
               className='w-full outline-none py-2 px-3 rounded-lg text-base border-2 hover:border-orange-300 h-12'
             >
               <option  value='SportsCar'>Sports Car</option>
-              <option value='RegularCar'>Regular Car</option>
+              <option value='VintageCar'>Vinatge Car</option>
               <option value='Truck'>Truck</option>
             </select>
      </div>

@@ -5,6 +5,7 @@ import ExtraSection1 from '../Sections/ExtraSection1';
 import SliderSection from '../Sections/SliderSection';
 import ExtraSection2 from '../Sections/ExtraSection2';
 import GallerySection from '../GallerySection/GallerySection';
+import ShopByCategory from '../ShopByCategory/ShopByCategory';
 
 const FrontPage = () => {
   return (
@@ -13,6 +14,7 @@ const FrontPage = () => {
     <ExtraSection1></ExtraSection1>
  <SliderSection></SliderSection>
 <GallerySection></GallerySection>
+<ShopByCategory></ShopByCategory>
  <ExtraSection2></ExtraSection2>
     <Footer></Footer>
     </div>
