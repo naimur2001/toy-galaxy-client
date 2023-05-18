@@ -8,7 +8,7 @@ const Footer = () => {
   <div>
  <img src="/public/tg.png" className='w-26 h-24' alt="" />
     <p className="font-bold">
-     Toy Galaxy. <br/>Providing reliable Eco Toy since 2010
+     Toy Galaxy. <br/>Providing reliable Toy Car since 2010
     </p> 
     <p className='font-medium'>Contact: 0101010 & lorem@gmail.com</p>
     <p>Copyright © 2023 - All right reserved</p>

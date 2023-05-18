@@ -22,7 +22,7 @@ const ExtraSection2 = () => {
       } </h2>
       
       <p className="text-gray-600 mb-4 p-4 text-center text-xl">
-        Stay up-to-date with the latest toy releases and promotions.
+        Stay up-to-date with the latest toy car releases and promotions.
       </p>
       <form onSubmit={handleSubmit} className="flex p-4">
         <input
