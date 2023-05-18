@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-
+import Swal from 'sweetalert2'
 const AddaToy = () => {
 const [category,setCategory]=useState("SportsCar")
 const {user}=useContext(AuthContext);
@@ -23,7 +23,7 @@ const handleAddData=(event)=>{
     url,quantity,price,rating,cate,detail,seller_email,seller_name
   }
   console.log(carInfo);
-  fetch(`http://localhost:5000/toycars`,{
+  fetch(`https://toy-galaxy-server-five.vercel.app/toycars`,{
     method: "POST",
     headers:{
       'content-type': 'application/json'
@@ -33,6 +33,16 @@ const handleAddData=(event)=>{
   .then(res=>res.json())
   .then(data=>{
     console.log(data)
+    if (data.insertedId) {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your data has been saved',
+        background:'orange',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
   })
 }
 

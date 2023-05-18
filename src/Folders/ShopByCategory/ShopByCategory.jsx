@@ -7,7 +7,7 @@ const [category,setCategory]=useState('SportsCar');
 const [datas,setDatas]=useState([])
 console.log(category);
 useEffect(()=>{
-fetch('http://localhost:5000/toycars')
+  fetch('https://toy-galaxy-server-five.vercel.app/toycars')
 .then(res=>res.json())
 .then(data=> {
   console.log(data)
@@ -18,7 +18,7 @@ fetch('http://localhost:5000/toycars')
 const selectedToyCar=datas.filter(toy=> toy.cate === category);
 console.log(selectedToyCar);
   return (
-    <div className='my-6'>
+    <div className='my-8'>
        <h2 className="text-2xl text-center font-mono text-lime-400 font-bold mb-2">
     Shop By Category
   </h2>
