@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import ShopByCategoryCard from './ShopByCategoryCard';
 const ShopByCategory = () => {
 const [category,setCategory]=useState('SportsCar');
 const [datas,setDatas]=useState([])
@@ -22,7 +23,7 @@ console.log(selectedToyCar);
     Shop By Category
   </h2>
   <p className="text-lg text-gray-500 text-center font-mono ">
-    Explore our wide range of toy categories and find the perfect one for you!
+    Explore our wide range of car toy categories and find the perfect one for you!
   </p>
   <div className='my-4'>
   <Tabs>
@@ -33,13 +34,25 @@ console.log(selectedToyCar);
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1</h2>
+<div className='grid lg:grid-cols-3 gap-4 lg:mx-0 mx-8'>
+{
+    selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
+  }
+</div>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+    <div className='grid lg:grid-cols-3 gap-4 lg:mx-0 mx-8'>
+{
+    selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
+  }
+</div>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 3</h2>
+    <div className='grid lg:grid-cols-3 gap-4 lg:mx-0 mx-8'>
+{
+    selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
+  }
+</div>
     </TabPanel>
   </Tabs>
   </div>
