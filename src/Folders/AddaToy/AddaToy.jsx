@@ -7,7 +7,32 @@ const AddaToy = () => {
 const [category,setCategory]=useState("SportsCar")
 const {user}=useContext(AuthContext);
 const handleAddData=(event)=>{
-
+  event.preventDefault();
+  const form=event.target;
+  const name=form.name.value;
+  const url=form.url.value;
+  const quantity=form.quantity.value;
+  const price=form.price.value;
+  const rating=form.rating.value;
+  const cate=category;
+  const detail=form.detail.value;
+  const seller_name=user?.displayName
+  const seller_email=user?.email
+  const carInfo={
+    name,
+    url,quantity,price,rating,cate,detail,seller_email,seller_name
+  }
+  fetch(`http://localhost:5000/toycars`,{
+    method: "POST",
+    headers:{
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(carInfo)
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    console.log(data)
+  })
 }
 
   return (
