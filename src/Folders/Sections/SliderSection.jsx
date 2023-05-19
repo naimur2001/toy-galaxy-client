@@ -29,7 +29,7 @@ const SliderSection = () => {
      
       <SwiperSlide>
       <div className="card w-full glass">
-  <figure><img src="/public/toy-680164_1280.jpg" className='h-1/4 my-2 rounded-xl w-2/4' alt="" /></figure>
+  <figure><img src="/toy-680164_1280.jpg" className='h-1/4 my-2 rounded-xl w-2/4' alt="" /></figure>
   <div className="card-body">
     <p className='text-center font-semibold'>Unleash your inner child.</p>
     <div className="card-actions justify-end">
@@ -43,7 +43,7 @@ const SliderSection = () => {
       <SwiperSlide>
       
       <div className="card w-full glass">
-  <figure><img src="/public/toy-car-431356_1280.jpg" className='h-1/4 my-2 rounded-xl w-2/4' alt="" /></figure>
+  <figure><img src="/toy-car-431356_1280.jpg" className='h-1/4 my-2 rounded-xl w-2/4' alt="" /></figure>
   <div className="card-body">
     <p className='text-center font-semibold'>Where playtime dreams come true!</p>
     <div className="card-actions justify-end">
@@ -55,7 +55,7 @@ const SliderSection = () => {
       <SwiperSlide>
       
       <div className="card w-full glass">
-  <figure><img src="/public/toy-680164_1280.jpg" className='h-1/4 my-2 rounded-xl w-2/4' alt="" /></figure>
+  <figure><img src="/toy-680164_1280.jpg" className='h-1/4 my-2 rounded-xl w-2/4' alt="" /></figure>
   <div className="card-body">
     <p className='text-center font-semibold'>Discover endless fun and adventure.</p>
     <div className="card-actions justify-end">
@@ -68,7 +68,7 @@ const SliderSection = () => {
       <SwiperSlide>
       
       <div className="card w-full glass">
-  <figure><img src="/public/autos-2060420_1280.jpg" className='h-1/4 my-2 rounded-xl w-2/4' alt="" /></figure>
+  <figure><img src="/autos-2060420_1280.jpg" className='h-1/4 my-2 rounded-xl w-2/4' alt="" /></figure>
   <div className="card-body">
     <p className='text-center font-semibold'>Toys that spark joy!</p>
     <div className="card-actions justify-end">
@@ -79,7 +79,7 @@ const SliderSection = () => {
       </SwiperSlide>
       <SwiperSlide>
       <div className="card w-full glass">
-  <figure><img src="/public/miniature-3567577_1280.jpg" className='h-2/4 my-2 rounded-xl w-2/4' alt="" /></figure>
+  <figure><img src="/miniature-3567577_1280.jpg" className='h-2/4 my-2 rounded-xl w-2/4' alt="" /></figure>
   <div className="card-body">
     <p className='text-center font-semibold'>Discover endless fun and adventure.</p>
     <div className="card-actions justify-end">
