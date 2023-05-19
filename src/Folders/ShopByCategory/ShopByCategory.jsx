@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import ShopByCategoryCard from './ShopByCategoryCard';
 const ShopByCategory = () => {
 const [category,setCategory]=useState('SportsCar');
+const [bool,setBool]=useState(false)
 const [datas,setDatas]=useState([])
 console.log(category);
 useEffect(()=>{
@@ -17,6 +18,16 @@ useEffect(()=>{
 },[])
 const selectedToyCar=datas.filter(toy=> toy.cate === category);
 console.log(selectedToyCar);
+// to render loading
+useEffect(()=>{
+  if (selectedToyCar===null) {
+    setBool(true)
+  }
+  else{
+    setBool(false)
+  }
+},[])
+// 
   return (
     <div className='my-8'>
        <h2 className="text-2xl text-center font-mono text-lime-400 font-bold mb-2">
@@ -36,21 +47,21 @@ console.log(selectedToyCar);
     <TabPanel>
 <div className='grid lg:grid-cols-3 gap-4 lg:mx-0 mx-8'>
 {
-    selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
+  bool ? <div className="radial-progress animate-spin text-red-500" style={{ "--value": "70", "--size": "2rem", "--thickness": "4px" }}></div> : selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
   }
 </div>
     </TabPanel>
     <TabPanel>
     <div className='grid lg:grid-cols-3 gap-4 lg:mx-0 mx-8'>
-{
-    selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
+    {
+  bool ? <div className="radial-progress animate-spin text-red-500" style={{ "--value": "70", "--size": "2rem", "--thickness": "4px" }}></div> : selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
   }
 </div>
     </TabPanel>
     <TabPanel>
     <div className='grid lg:grid-cols-3 gap-4 lg:mx-0 mx-8'>
-{
-    selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
+    {
+  bool ? <div className="radial-progress animate-spin text-red-500" style={{ "--value": "70", "--size": "2rem", "--thickness": "4px" }}></div> : selectedToyCar?.map(data=> <ShopByCategoryCard key={data._id} data={data} ></ShopByCategoryCard> )
   }
 </div>
     </TabPanel>

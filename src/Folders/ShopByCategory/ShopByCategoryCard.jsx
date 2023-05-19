@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ShopByCategoryCard = ({data}) => {
-  const {name,price,rating,url}=data
+  const {name,price,rating,url,_id}=data
   return (
     <div>
    <div className="card w-80 h-80 bg-lime-100 shadow-xl">
@@ -16,7 +17,7 @@ const ShopByCategoryCard = ({data}) => {
     </h2>
     <div className="card-actions  flex justify-end">
       <div className="badge badge-outline font-semibold p-3">$ {price}</div>
-      <div className="badge badge-outline bg-lime-300 font-medium p-3 cursor-pointer">Veiw Detail</div>
+    <Link to={`/viewdetail/${_id}`} >  <div className="badge badge-outline bg-lime-300 font-medium p-3 cursor-pointer">Veiw Detail</div></Link>
     </div>
   </div>
 </div>
