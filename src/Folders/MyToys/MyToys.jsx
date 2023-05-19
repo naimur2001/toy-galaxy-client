@@ -44,7 +44,7 @@ console.log(datas);
     </thead>
     
 {
-datas?.map(data=> <MyToysCard key={data._id} data={data} ></MyToysCard>)
+datas?.map(data=> <MyToysCard key={data._id} data={data} setDatas={setDatas} datas={datas} ></MyToysCard>)
 
 }
     

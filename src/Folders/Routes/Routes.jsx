@@ -48,7 +48,7 @@ const router =createBrowserRouter([
     },{
       path: 'mytoys',
       element: <MyToys></MyToys>,
-      loader: () => fetch('https://toy-galaxy-server-five.vercel.app/toycars')
+      // loader: () => fetch('https://toy-galaxy-server-five.vercel.app/toycars')
     },{
       path: 'viewdetail/:id',
       element: <VeiwDetail></VeiwDetail>,
