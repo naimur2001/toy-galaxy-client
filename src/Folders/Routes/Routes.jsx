@@ -8,6 +8,7 @@ import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
 import AddaToy from "../AddaToy/AddaToy";
 import AllToys from "../AllToys/AllToys";
+import MyToys from "../MyToys/MyToys";
 
 
 const router =createBrowserRouter([
@@ -42,6 +43,10 @@ const router =createBrowserRouter([
     },{
       path: 'alltoys',
       element: <AllToys></AllToys>,
+      loader: () => fetch('https://toy-galaxy-server-five.vercel.app/toycars')
+    },{
+      path: 'mytoys',
+      element: <MyToys></MyToys>,
       loader: () => fetch('https://toy-galaxy-server-five.vercel.app/toycars')
     }
   ]
