@@ -2,7 +2,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { useContext } from 'react';
-
+import '../../../public/Public.css'
 const Navbar = () => {
 const {user,logOut}=useContext(AuthContext);
 
@@ -20,8 +20,8 @@ const {user,logOut}=useContext(AuthContext);
 
 const conditionalElement= <>
 
-  <li className='text-black font-mono'><Link to='/mytoys' >My Toys</Link></li>
-  <li className='text-black font-mono' ><Link to='/' onClick={handleSignOut}>Logout</Link></li>
+  
+  <li className='text-red-400 font-mono' ><Link to='/' onClick={handleSignOut}>Logout</Link></li>
 </>
 
   return (
@@ -34,19 +34,20 @@ const conditionalElement= <>
           </label>
           <ul tabIndex={0} className="menu menu-compact font-semibold dropdown-content mt-3 p-2 shadow bg-base-100  rounded-box w-52">
             <li className='text-black font-mono' ><Link to='/'>Home</Link></li>
-            <li className='text-black font-mono' ><Link to='/alltoys'>All Toys</Link></li>
             <li className='text-black font-mono' >
               <Link to='/blogs' className="justify-between">
                 Blogs
               </Link>
             </li>
+            <li className='text-black font-mono' ><Link to='/alltoys'>All Toys</Link></li>
             <li className='text-black font-mono'><Link to='/addatoy'>Add A Toy</Link></li>
+            <li className='text-black font-mono'><Link to='/mytoys' >My Toys</Link></li>
             {user ? 
           <>
             {conditionalElement}</>
              : 
               <>  
-                <li className='text-black font-mono'><Link to='/login'>Login</Link></li>
+                <li className='text-black font-mono '><Link to='/login'>Login</Link></li>
                 <li className='text-black font-mono' ><Link to='/signup'>Register</Link></li>
               </>
             }
@@ -64,19 +65,20 @@ const conditionalElement= <>
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 text-lg">
           <li>  <Link to='/'><img src="/public/tg.png" className='w-24 h-16' alt="" /></Link></li>
           <li className='text-black font-mono'><Link to='/'>Home</Link></li>
-          <li className='text-black font-mono'><Link to='/alltoys'>All Toys</Link></li>
           <li className='text-black font-mono'>
             <Link to='/blogs' className="justify-between">
               Blogs
             </Link>
           </li>
+          <li className='text-black font-mono'><Link to='/alltoys'>All Toys</Link></li>
           <li className='text-black font-mono'><Link to='/addatoy'>Add A Toy</Link></li>
+          <li className='text-black font-mono'><Link to='/mytoys' >My Toys</Link></li>
           {user ? <>
             {conditionalElement}
           </>: (
             <>  
-              <li className='text-black font-mono'><Link to='/login'>Login</Link></li>
-              <li className='text-black font-mono'><Link to='/signup'>Register</Link></li>
+              <li className='font-mono text-red-400'><Link to='/login'>Login</Link></li>
+              <li className='text-red-400 font-mono'><Link to='/signup'>Register</Link></li>
             </>
           )}
        

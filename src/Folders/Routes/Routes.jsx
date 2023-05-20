@@ -11,6 +11,7 @@ import AllToys from "../AllToys/AllToys";
 import MyToys from "../MyToys/MyToys";
 import VeiwDetail from "../AllToys/VeiwDetail";
 import UpdateToy from "../UpdateToy/UpdateToy";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 const router =createBrowserRouter([
@@ -48,11 +49,11 @@ const router =createBrowserRouter([
       loader: () => fetch('https://toy-galaxy-server-five.vercel.app/toycars')
     },{
       path: 'mytoys',
-      element: <MyToys></MyToys>,
+      element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
       // loader: () => fetch('https://toy-galaxy-server-five.vercel.app/toycars')
     },{
       path: 'viewdetail/:id',
-      element: <VeiwDetail></VeiwDetail>,
+      element: <PrivateRoute><VeiwDetail></VeiwDetail></PrivateRoute>,
       loader: ({params})=> fetch(`https://toy-galaxy-server-five.vercel.app/toycars/${params.id}`)
     },{
       path: 'updatetoy/:id',
