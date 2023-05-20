@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import LazyLoad from 'react-lazy-load';
 const ShopByCategoryCard = ({data}) => {
   const {name,price,rating,url,_id}=data
   return (
-    <div>
+    <LazyLoad>
+
+<div>
    <div className="card w-80 h-80 bg-lime-100 shadow-xl">
   <figure><img src={url} alt="car" /></figure>
   <div className="card-body flex justify-between">
@@ -22,6 +24,7 @@ const ShopByCategoryCard = ({data}) => {
   </div>
 </div>
     </div>
+    </LazyLoad>
   );
 };
 
