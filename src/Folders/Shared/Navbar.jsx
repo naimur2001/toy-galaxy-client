@@ -75,12 +75,12 @@ const conditionalElement= <>
           </ul>
         </div>
 
-     <div className='lg:w-52 w-44'><h1 className='font-mono  sm:text-center  md:text-center lg:text-start lg:text-lg text-xs font-semibold '>{title}</h1></div>
+     <div className='lg:w-48 w-44'><h1 className='font-mono  sm:text-center  md:text-center lg:text-start lg:text-lg text-xs font-semibold '>{title}</h1></div>
      
    
 
       </div>
-  <div className="navbar-center hidden lg:flex lg:w-3/4">
+  <div className="navbar-center hidden lg:flex lg:w-3/2">
 
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 ">
           <li>  <Link to='/'><img src="/public/tg.png" className='w-24 h-16' alt="" /></Link></li>

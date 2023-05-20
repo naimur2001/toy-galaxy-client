@@ -1,6 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const GallerySection = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration (in milliseconds)
+      easing: 'ease-in-out', // Animation easing
+      delay: 200, // Delay between elements animations (in milliseconds)
+    });
+  }, []);
 const images=[
  'https://cdn.pixabay.com/photo/2023/04/24/10/37/car-7947765_1280.jpg',
  'https://cdn.pixabay.com/photo/2016/11/06/05/33/miniature-1802333_1280.jpg',
@@ -26,10 +36,15 @@ const images=[
             >
                 <Masonry >
                 {images.map((image, index) => (
-        <div key={index}>
-          <img src={image} alt="" className="p-2  hover:scale-105 transform transition-transform duration-300" />
-        </div>
-      ))}
+            <div key={index}>
+              <img
+                src={image}
+                alt=""
+                className={index % 2 === 0 ? 'aos-animate p-2' : 'p-2'}
+                data-aos={index % 2 === 0 ? 'fade-down' : 'fade-up'}
+              />
+            </div>
+          ))}
                 </Masonry>
             </ResponsiveMasonry>
     </div>
@@ -37,3 +52,4 @@ const images=[
 };
 
 export default GallerySection;
+// hover:scale-105 transform transition-transform duration-300 
