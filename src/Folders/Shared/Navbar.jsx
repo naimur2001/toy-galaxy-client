@@ -1,13 +1,33 @@
 
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import '../../../public/Public.css'
 const Navbar = () => {
 const {user,logOut}=useContext(AuthContext);
+const location = useLocation();
+const [title, setTitle] = useState('');
+useEffect(() => {
+  const route = location.pathname;
+  const pageTitle = route !== '/' ? `Toy Galaxy${getPageTitle(route)}` : 'Toy Galaxy';
+  setTitle(pageTitle);
+}, [location]);
 
+const getPageTitle = (route) => {
+  switch (route) {
+    case '/blogs':
+      return '|Blogs';
+    case '/alltoys':
+      return '|All Toys';
+    case '/addatoy':
+      return '|Add A Toy';
+    case '/mytoys':
+      return '|My Toys';
+    default:
+      return '';
+  }
+};
 
-  
   const handleSignOut=()=>{
     logOut()
   .then(result=>{
@@ -39,9 +59,9 @@ const conditionalElement= <>
                 Blogs
               </Link>
             </li>
-            <li className='text-black font-mono' ><Link to='/alltoys'>All Toys</Link></li>
-            <li className='text-black font-mono'><Link to='/addatoy'>Add A Toy</Link></li>
-            <li className='text-black font-mono'><Link to='/mytoys' >My Toys</Link></li>
+            <li  className='text-black font-mono' ><Link  to='/alltoys'>All Toys</Link></li>
+            <li className='text-black font-mono'><Link  to='/addatoy'>Add A Toy</Link></li>
+            <li  className='text-black font-mono'><Link  to='/mytoys' >My Toys</Link></li>
             {user ? 
           <>
             {conditionalElement}</>
@@ -55,14 +75,14 @@ const conditionalElement= <>
           </ul>
         </div>
 
-     <h1 className='font-mono text-center sm:text-center md:text-center lg:text-start text-xl font-semibold'>Toy Galaxy</h1>
+     <div className='lg:w-52 w-44'><h1 className='font-mono  sm:text-center  md:text-center lg:text-start lg:text-lg text-xs font-semibold '>{title}</h1></div>
      
    
 
       </div>
-  <div className="navbar-center hidden lg:flex lg:mr-22">
+  <div className="navbar-center hidden lg:flex lg:w-3/4">
 
-        <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 text-lg">
+        <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 ">
           <li>  <Link to='/'><img src="/public/tg.png" className='w-24 h-16' alt="" /></Link></li>
           <li className='text-black font-mono'><Link to='/'>Home</Link></li>
           <li className='text-black font-mono'>
@@ -70,9 +90,9 @@ const conditionalElement= <>
               Blogs
             </Link>
           </li>
-          <li className='text-black font-mono'><Link to='/alltoys'>All Toys</Link></li>
-          <li className='text-black font-mono'><Link to='/addatoy'>Add A Toy</Link></li>
-          <li className='text-black font-mono'><Link to='/mytoys' >My Toys</Link></li>
+          <li  className='text-black font-mono'><Link  to='/alltoys'>All Toys</Link></li>
+          <li className='text-black font-mono'><Link  to='/addatoy'>Add A Toy</Link></li>
+          <li  className='text-black font-mono'><Link  to='/mytoys' >My Toys</Link></li>
           {user ? <>
             {conditionalElement}
           </>: (
@@ -84,11 +104,11 @@ const conditionalElement= <>
        
         </ul>
       </div>
-      
+   
   {
-    user && <div className="navbar-end  lg:w-26 ">
+    user && <div className="navbar-end lg:ml-0 ml-32 lg:w-26  ">
         
-      
+    
     <img src={user.photoURL} className='rounded-full w-12 h-12 border-2 ' title={user.displayName} alt="IMG" />
     
     </div>
