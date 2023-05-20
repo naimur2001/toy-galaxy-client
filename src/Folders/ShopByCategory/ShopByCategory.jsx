@@ -30,7 +30,7 @@ useEffect(()=>{
 // 
   return (
     <div className='my-8'>
-       <h2 className="text-2xl text-center font-mono text-lime-400 font-bold mb-2">
+       <h2 className="text-2xl text-center font-mono text-gray-700 font-bold mb-2">
     Shop By Category
   </h2>
   <p className="text-lg text-gray-500 text-center font-mono ">

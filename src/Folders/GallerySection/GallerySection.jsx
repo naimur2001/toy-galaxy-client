@@ -28,7 +28,7 @@ const images=[
 
   return (
     <div className="my-6">
-      <h1 className="text-2xl font-mono font-extrabold text-center text-purple-700 mb-8">
+      <h1 className="text-2xl font-mono font-extrabold text-center text-gray-700 mb-8">
   Explore the Magical Car Gallery
 </h1>
    <ResponsiveMasonry

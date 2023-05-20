@@ -13,7 +13,7 @@ const SliderSection = () => {
 
   return (
     <div className='my-2'>
-      <h1 className='my-1 border-l-4 border-r-4 border-green-400 text-2xl text-center font-semibold font-mono text-rose-400'>Unleash Your Imagination, Explore Endless Playtime Adventures!</h1>
+      <h1 className='my-1 border-l-4 border-r-4 border-green-400 text-2xl text-center font-semibold font-mono text-gray-700'>Unleash Your Imagination, Explore Endless Playtime Adventures!</h1>
     <Swiper
       
       slidesPerView={1}

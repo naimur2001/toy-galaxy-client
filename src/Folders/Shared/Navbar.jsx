@@ -5,28 +5,6 @@ import { useContext, useEffect, useState } from 'react';
 import '../../../public/Public.css'
 const Navbar = () => {
 const {user,logOut}=useContext(AuthContext);
-const location = useLocation();
-const [title, setTitle] = useState('');
-useEffect(() => {
-  const route = location.pathname;
-  const pageTitle = route !== '/' ? `Toy Galaxy${getPageTitle(route)}` : 'Toy Galaxy';
-  setTitle(pageTitle);
-}, [location]);
-
-const getPageTitle = (route) => {
-  switch (route) {
-    case '/blogs':
-      return '|Blogs';
-    case '/alltoys':
-      return '|All Toys';
-    case '/addatoy':
-      return '|Add A Toy';
-    case '/mytoys':
-      return '|My Toys';
-    default:
-      return '';
-  }
-};
 
   const handleSignOut=()=>{
     logOut()
@@ -75,7 +53,7 @@ const conditionalElement= <>
           </ul>
         </div>
 
-     <div className='lg:w-48 w-44'><h1 className='font-mono  sm:text-center  md:text-center lg:text-start lg:text-lg text-xs font-semibold '>{title}</h1></div>
+     <div className='lg:w-48 w-44'><h1 className='font-mono  sm:text-center  md:text-center lg:text-start lg:text-lg text-xs font-semibold '>Toy Galaxy</h1></div>
      
    
 
