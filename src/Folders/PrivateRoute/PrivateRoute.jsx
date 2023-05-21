@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
   const location=useLocation()
   if (load) {
     return <div className='flex justify-center items-center relative '>
-    <div className="  absolute top-44 radial-progress animate-spin text-orange-500" style={{ "--value": "70", "--size": "12rem", "--thickness": "2rem" }}></div>
+    <div className="  absolute top-44 radial-progress animate-spin text-red-500" style={{ "--value": "70", "--size": "6rem", "--thickness": "2rem" }}></div>
   
     </div>
    }
