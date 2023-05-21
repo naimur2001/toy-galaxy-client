@@ -43,6 +43,7 @@ const handleSearch=()=>{
   );
   setDatas(filteredDatas.slice(0, itemsPerPage));
   setCurrentPage(1);
+ 
 }
 
   return (

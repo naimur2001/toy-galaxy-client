@@ -2,7 +2,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { useContext, useEffect, useState } from 'react';
-import '../../../public/Public.css'
+
 const Navbar = () => {
 const {user,logOut}=useContext(AuthContext);
 
@@ -61,7 +61,7 @@ const conditionalElement= <>
   <div className="navbar-center hidden lg:flex lg:w-3/2">
 
         <ul className="menu menu-horizontal px-1 font-semibold text-rose-400 ">
-          <li>  <Link to='/'><img src="/public/tg.png" className='w-24 h-16' alt="" /></Link></li>
+          <li>  <Link to='/'><img src="/tg.png" className='w-24 h-16' alt="" /></Link></li>
           <li className='text-black font-mono'><Link to='/'>Home</Link></li>
           <li className='text-black font-mono'>
             <Link to='/blogs' className="justify-between">

@@ -6,7 +6,7 @@ const Footer = () => {
     <div className='mt-10'>
     <footer className="footer footer-center p-2 bg-green-200 rounded-lg ">
   <div>
- <img src="/public/tg.png" className='w-26 h-24' alt="" />
+ <img src="/tg.png" className='w-26 h-24' alt="" />
     <p className="font-bold">
      Toy Galaxy. <br/>Providing reliable Toy Car since 2010
     </p> 
