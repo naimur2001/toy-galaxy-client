@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import useTitle from '../Hooks/useTitle';
 
 const Blog = () => {
   useTitle('Blogs')
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, []);
   return (
   <>
   <Navbar></Navbar>

@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
+
 const ShopByCategoryCard = ({data}) => {
+
+
   const {name,price,rating,url,_id}=data
   return (
     <LazyLoad>
 
 <div>
+
    <div className="card w-80 h-80 bg-lime-100 shadow-xl">
   <figure><img src={url} alt="car" /></figure>
   <div className="card-body flex justify-between">
@@ -19,7 +23,7 @@ const ShopByCategoryCard = ({data}) => {
     </h2>
     <div className="card-actions  flex justify-end">
       <div className="badge badge-outline font-semibold p-3">$ {price}</div>
-    <Link to={`/viewdetail/${_id}`} >  <div className="badge badge-outline bg-lime-300 font-medium p-3 cursor-pointer">Veiw Detail</div></Link>
+    <Link  to={`/viewdetail/${_id}`} >  <div className="badge badge-outline bg-lime-300 font-medium p-3 cursor-pointer">Veiw Detail</div></Link>
     </div>
   </div>
 </div>

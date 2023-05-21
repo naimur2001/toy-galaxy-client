@@ -7,6 +7,12 @@ import useTitle from '../Hooks/useTitle';
 
 const MyToys = () => {
   const {user}=useContext(AuthContext);
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, []);
   const [datas,setDatas]=useState([])
   useTitle("My Toys")
   // price filter

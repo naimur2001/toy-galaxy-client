@@ -7,7 +7,7 @@ import ExtraSection2 from '../Sections/ExtraSection2';
 import GallerySection from '../GallerySection/GallerySection';
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import useTitle from '../Hooks/useTitle';
-
+import 'react-toastify/dist/ReactToastify.css';
 const FrontPage = () => {
   useTitle('Home')
   return (

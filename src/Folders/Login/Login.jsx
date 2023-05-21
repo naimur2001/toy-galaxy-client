@@ -4,16 +4,21 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import useTitle from '../Hooks/useTitle';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
   useTitle('Login')
   const {signIn,googleSignIn }=useContext(AuthContext);
-
     //privateroute
-    
     const location=useLocation();
     const navigate=useNavigate();
     const from=location?.state?.from?.pathname || '/'
+    
+    console.log();
+    if (from.split('/')[1]==='viewdetail') {
+      const notify = () => toast("You have to log in first to view details");
+      notify()
+    }
 // error
   const [error,SetError]=useState('')
   // random signin
@@ -64,6 +69,7 @@ const handleGoogle=(event)=>{
 <>
 <Navbar></Navbar>
 <div className='mt-10'>
+<ToastContainer></ToastContainer>
     <form onSubmit={handleSignIn}>
     <div className="hero min-h-screen bg-purple-200 rounded-lg">
     <div className="hero-content flex-col ">

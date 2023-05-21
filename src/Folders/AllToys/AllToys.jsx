@@ -7,7 +7,12 @@ import useTitle from '../Hooks/useTitle';
 
 const AllToys = () => {
   useTitle('All Toys')
-
+  useEffect(() => {
+    document.documentElement.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, []);
  const [datas,setDatas]=useState([])
  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 20;
