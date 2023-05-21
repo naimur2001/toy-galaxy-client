@@ -7,51 +7,34 @@ import useTitle from '../Hooks/useTitle';
 
 const AllToys = () => {
   useTitle('All Toys')
-  const [totaltoycar,setTotaltoycar]=useState()
-useEffect(()=>{
-  fetch('https://toy-galaxy-server-five.vercel.app/totaltoycars')
-  .then(response => response.json())
-  .then(data => {
-    setTotaltoycar(data.totaltoycars) // Output: 10
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-},[])
- const [currentPage,setCurrentPage]=useState(0)
+
  const [datas,setDatas]=useState([])
- const [carPerRow,setCarPerRow]=useState(20)
- const [searchQuery, setSearchQuery] = useState('');
-const tablerow=20
-
-const totalPages=Math.ceil( totaltoycar/ tablerow)
-
-const pageNumbers=[]
-  for (let i = 1; i <=totalPages; i++) {
-pageNumbers.push(i)
-    
-  }
-console.log(totaltoycar,totalPages,pageNumbers);
+ const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
 useEffect(()=>{
   async function fetchData(){
-    const searchParam = searchQuery ? `&search=${encodeURIComponent(searchQuery)}` : '';
+    
     const response = await fetch(
-      `https://toy-galaxy-server-five.vercel.app/toycars?page=${currentPage}&limit=${carPerRow}${searchParam}`
+      `https://toy-galaxy-server-five.vercel.app/toycars`
     );
     const data=await response.json();
     setDatas(data)
   }
   fetchData();
-},[currentPage,carPerRow])
+},[])
 
-const handlePageChange = page => {
-  setCurrentPage(page);
+const handleNextPage = () => {
+  setCurrentPage((prevPage) => prevPage + 1);
 };
 
-const handleSearch = () => {
-  setCurrentPage(0); // Reset current page when search is performed
+const handlePreviousPage = () => {
+  setCurrentPage((prevPage) => prevPage - 1);
 };
 
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+const currentData = datas.slice(startIndex, endIndex);
+console.log(datas.length);
   return (
  <>
  <Navbar></Navbar>
@@ -61,11 +44,10 @@ const handleSearch = () => {
   <input
             type="text"
             placeholder="Search by toy name"
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
+         
             className="px-2 py-1 outline-none border-2 border-green-200 rounded-md"
           />
-          <button onClick={handleSearch} className='px-3 py-1 rounded font-mono font-medium mx-2 bg-green-200'>Search</button>
+          <button onClick={''} className='px-3 py-1 rounded font-mono font-medium mx-2 bg-green-200'>Search</button>
   </div>
  </div>
     <div className='my-7'>
@@ -79,28 +61,45 @@ const handleSearch = () => {
       <th>Car Name</th>
       <th>Sub-Category</th>
       <th>Price</th>
+      <th>Rating</th>
       <th>Available-Quantity</th>
       <th>Action</th>
       
     </tr>
   </thead>
-  
-{
- datas?.map(data=> <AllToyTableData key={data._id} data={data}></AllToyTableData>)
 
-}
-  
-  
+              {currentData.map((data) => (
+                <AllToyTableData key={data._id} data={data} />
+              ))}
 </table>
 </div>
-<div className='my-3 flex justify-center items-center gap-2'>
-{
-datas && pageNumbers?.map((btn,index )=> <button onChange={()=>[setCurrentPage(index)]} className={currentPage===index ? 
-  `bg-orange-500 text-black w-7 h-7 border
-   rounded-md` :
-   ` bg-slate-200 text-black w-7 h-7 border rounded-md`}> {index+1}</button>)
-}
-</div>
+<div className="flex justify-center mt-4">
+          {currentPage > 1 && (
+            <div className='flex gap-2'>
+              <button
+              className="px-3 py-1 rounded font-mono font-medium bg-rose-600 text-white mr-2 disabled "
+              onClick={handlePreviousPage}
+            >
+              Previous
+            </button>
+            <button className="px-3 py-1 rounded font-mono opacity-60 text-white font-medium bg-rose-600" onClick={handleNextPage}>
+              Next
+            </button>
+             
+            </div> 
+            
+          )}
+          {endIndex < datas.length && (
+            <div className='flex gap-2'>
+            
+              <button className="px-3 py-1 rounded font-mono text-white font-medium bg-rose-600" onClick={handleNextPage}>
+              Next
+            </button>
+             
+            </div>
+          )}
+        </div>
+
   </div>
    
 

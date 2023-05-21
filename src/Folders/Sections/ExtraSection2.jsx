@@ -45,9 +45,9 @@ Toy Galaxy Newsletter
       </form>
     </div>
     <div className='relative'>
-      <img src="/public/toy-car-431356_1280.jpg" className='border-2 rounded-lg' alt="" />
-      <img src="/public/autos-2060420_1280.jpg"  className='w-2/4 absolute -bottom-7 right-4 border-2  rounded-lg' alt="" />
-      <img src="/public/pexels-pixabay-35967.jpg "  className='w-1/4 lg:absolute lg:flex hidden -right-5  top-1/2 border-2  rounded-lg' alt="" />
+      <img src="/toy-car-431356_1280.jpg" className='border-2 rounded-lg' alt="" />
+      <img src="/autos-2060420_1280.jpg"  className='w-2/4 absolute -bottom-7 right-4 border-2  rounded-lg' alt="" />
+      <img src="/pexels-pixabay-35967.jpg "  className='w-1/4 lg:absolute lg:flex hidden -right-5  top-1/2 border-2  rounded-lg' alt="" />
     </div>
 
     </div>

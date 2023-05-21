@@ -18,7 +18,7 @@ const {user,logOut}=useContext(AuthContext);
 
 const conditionalElement= <>
 
-  
+<li  className='text-black font-mono'><Link  to='/mytoys' >My Toys</Link></li>
   <li className='text-red-400 font-mono' ><Link to='/' onClick={handleSignOut}>Logout</Link></li>
 </>
 
@@ -39,7 +39,7 @@ const conditionalElement= <>
             </li>
             <li  className='text-black font-mono' ><Link  to='/alltoys'>All Toys</Link></li>
             <li className='text-black font-mono'><Link  to='/addatoy'>Add A Toy</Link></li>
-            <li  className='text-black font-mono'><Link  to='/mytoys' >My Toys</Link></li>
+        
             {user ? 
           <>
             {conditionalElement}</>
@@ -70,7 +70,7 @@ const conditionalElement= <>
           </li>
           <li  className='text-black font-mono'><Link  to='/alltoys'>All Toys</Link></li>
           <li className='text-black font-mono'><Link  to='/addatoy'>Add A Toy</Link></li>
-          <li  className='text-black font-mono'><Link  to='/mytoys' >My Toys</Link></li>
+         
           {user ? <>
             {conditionalElement}
           </>: (

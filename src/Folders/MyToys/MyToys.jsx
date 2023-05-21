@@ -61,6 +61,7 @@ useEffect(() => {
         <th>Car Name</th>
         <th>Sub-Category</th>
         <th>Price</th>
+        <th>Rating</th>
         <th>Available-Quantity</th>
         <th>Action</th>
         
