@@ -15,7 +15,7 @@ const ExtraSection2 = () => {
 
   return (
 <>
-<h1 className="text-2xl font-mono font-extrabold text-center text-rose-400 mb-8">
+<h1 className="text-2xl font-mono font-extrabold text-center text-gray-700 mb-8">
 Toy Galaxy Newsletter
 </h1>
     <div className='grid lg:grid-cols-2 mt-5 mb-10 gap-2 bg-green-200 rounded-lg'>

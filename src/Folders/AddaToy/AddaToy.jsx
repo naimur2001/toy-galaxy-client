@@ -50,7 +50,7 @@ const handleAddData=(event)=>{
   <>
   <Navbar></Navbar>
     <div>
-  <h1 className='text-center text-3xl text-gray-500 font-mono font-semibold my-4' >Add a Toy Car Information</h1>
+  <h1 className='text-center text-2xl text-gray-700 font-mono font-semibold my-4' >Add a Toy Car Information</h1>
   <div className='bg-lime-200 p-2 rounded-lg'>
       <form onSubmit={handleAddData} >
 

@@ -5,19 +5,67 @@ import Footer from '../Shared/Footer';
 import AllToyTableData from './AllToyTableData';
 
 const AllToys = () => {
- const  datas=useLoaderData();
- const [bool,setBool]=useState(false)
- useEffect(()=>{
-  if (datas===null) {
-    setBool(true)
-  }
-  else{
-    setBool(false)
-  }
+  const [totaltoycar,setTotaltoycar]=useState()
+useEffect(()=>{
+  fetch('https://toy-galaxy-server-five.vercel.app/totaltoycars')
+  .then(response => response.json())
+  .then(data => {
+    setTotaltoycar(data.totaltoycars) // Output: 10
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 },[])
+ const [currentPage,setCurrentPage]=useState(0)
+ const [datas,setDatas]=useState([])
+ const [carPerRow,setCarPerRow]=useState(20)
+ const [searchQuery, setSearchQuery] = useState('');
+const tablerow=20
+
+const totalPages=Math.ceil( totaltoycar/ tablerow)
+
+const pageNumbers=[]
+  for (let i = 1; i <=totalPages; i++) {
+pageNumbers.push(i)
+    
+  }
+console.log(totaltoycar,totalPages,pageNumbers);
+useEffect(()=>{
+  async function fetchData(){
+    const searchParam = searchQuery ? `&search=${encodeURIComponent(searchQuery)}` : '';
+    const response = await fetch(
+      `https://toy-galaxy-server-five.vercel.app/toycars?page=${currentPage}&limit=${carPerRow}${searchParam}`
+    );
+    const data=await response.json();
+    setDatas(data)
+  }
+  fetchData();
+},[currentPage,carPerRow])
+
+const handlePageChange = page => {
+  setCurrentPage(page);
+};
+
+const handleSearch = () => {
+  setCurrentPage(0); // Reset current page when search is performed
+};
+
   return (
  <>
  <Navbar></Navbar>
+ <div className='my-6'>
+  <h1 className='text-2xl text-gray-700  font-mono font-semibold text-center'>All Toys </h1>
+  <div>
+  <input
+            type="text"
+            placeholder="Search by toy name"
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+            className="px-2 py-1 outline-none border-2 border-green-200 rounded-md"
+          />
+          <button onClick={handleSearch} className='px-3 py-1 rounded font-mono font-medium mx-2 bg-green-200'>Search</button>
+  </div>
+ </div>
     <div className='my-7'>
     <div className="overflow-x-auto w-full">
 <table className="table w-full">
@@ -36,12 +84,20 @@ const AllToys = () => {
   </thead>
   
 {
- bool ?   <div className="radial-progress animate-spin text-red-500" style={{ "--value": "70", "--size": "2rem", "--thickness": "4px" }}></div> : datas?.map(data=> <AllToyTableData key={data._id} data={data}></AllToyTableData>)
+ datas?.map(data=> <AllToyTableData key={data._id} data={data}></AllToyTableData>)
 
 }
   
   
 </table>
+</div>
+<div className='my-3 flex justify-center items-center gap-2'>
+{
+datas && pageNumbers?.map((btn,index )=> <button onChange={()=>[setCurrentPage(index)]} className={currentPage===index ? 
+  `bg-orange-500 text-black w-7 h-7 border
+   rounded-md` :
+   ` bg-slate-200 text-black w-7 h-7 border rounded-md`}> {index+1}</button>)
+}
 </div>
   </div>
    

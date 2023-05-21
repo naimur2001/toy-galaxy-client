@@ -25,6 +25,7 @@ console.log(datas);
   return (
   <>
   <Navbar></Navbar>
+  <div className='my-6'><h1 className='text-2xl text-gray-700  font-mono font-semibold text-center'>My Toys </h1></div>
     <div>
     <div className='my-7'>
       <div className="overflow-x-auto w-full">

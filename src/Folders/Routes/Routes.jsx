@@ -42,11 +42,11 @@ const router =createBrowserRouter([
     },
     {
       path: 'addatoy',
-      element: <AddaToy></AddaToy>
+      element:<PrivateRoute> <AddaToy></AddaToy></PrivateRoute>
     },{
       path: 'alltoys',
       element: <AllToys></AllToys>,
-      loader: () => fetch('https://toy-galaxy-server-five.vercel.app/toycars')
+      
     },{
       path: 'mytoys',
       element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,

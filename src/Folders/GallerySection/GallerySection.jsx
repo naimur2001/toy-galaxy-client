@@ -6,9 +6,9 @@ const GallerySection = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animation duration (in milliseconds)
-      easing: 'ease-in-out', // Animation easing
-      delay: 200, // Delay between elements animations (in milliseconds)
+      duration: 800, 
+      easing: 'ease-in-out', 
+      delay: 200, 
     });
   }, []);
 const images=[
@@ -40,7 +40,7 @@ const images=[
               <img
                 src={image}
                 alt=""
-                className={index % 2 === 0 ? 'aos-animate p-2' : 'p-2'}
+                className={index % 2 === 0 ? 'aos-animate p-2' : 'aos-animate p-2'}
                 data-aos={index % 2 === 0 ? 'fade-down' : 'fade-up'}
               />
             </div>
