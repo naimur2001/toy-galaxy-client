@@ -3,8 +3,10 @@ import { useLoaderData } from 'react-router-dom';
 import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import AllToyTableData from './AllToyTableData';
+import useTitle from '../Hooks/useTitle';
 
 const AllToys = () => {
+  useTitle('All Toys')
   const [totaltoycar,setTotaltoycar]=useState()
 useEffect(()=>{
   fetch('https://toy-galaxy-server-five.vercel.app/totaltoycars')

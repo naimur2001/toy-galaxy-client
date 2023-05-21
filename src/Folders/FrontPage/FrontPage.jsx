@@ -6,8 +6,10 @@ import SliderSection from '../Sections/SliderSection';
 import ExtraSection2 from '../Sections/ExtraSection2';
 import GallerySection from '../GallerySection/GallerySection';
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
+import useTitle from '../Hooks/useTitle';
 
 const FrontPage = () => {
+  useTitle('Home')
   return (
     <div>
       <Navbar></Navbar>

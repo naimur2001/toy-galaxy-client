@@ -3,8 +3,10 @@ import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import useTitle from '../Hooks/useTitle';
 
 const Signup = () => {
+  useTitle('Register')
   const [error,SetError]=useState('')
   const {createUser,updateInfo}=useContext(AuthContext);
   const handleSignUp=(event)=>{

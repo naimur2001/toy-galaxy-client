@@ -1,8 +1,10 @@
 import React from 'react';
 import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
+import useTitle from '../Hooks/useTitle';
 
 const Blog = () => {
+  useTitle('Blogs')
   return (
   <>
   <Navbar></Navbar>

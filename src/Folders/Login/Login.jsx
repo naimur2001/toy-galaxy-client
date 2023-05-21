@@ -3,8 +3,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
+import useTitle from '../Hooks/useTitle';
 
 const Login = () => {
+  useTitle('Login')
   const {signIn,googleSignIn }=useContext(AuthContext);
 
     //privateroute

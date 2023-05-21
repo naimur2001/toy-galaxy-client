@@ -3,7 +3,9 @@ import Navbar from '../Shared/Navbar';
 import Footer from '../Shared/Footer';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
+import useTitle from '../Hooks/useTitle';
 const AddaToy = () => {
+  useTitle('Add A Toy')
 const [category,setCategory]=useState("SportsCar")
 const {user}=useContext(AuthContext);
 const handleAddData=(event)=>{
